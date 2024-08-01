@@ -1,5 +1,6 @@
 require("f0oster.set")
 require("f0oster.remap")
+require("f0oster.packer")
 
 -- DO NOT INCLUDE THIS
 vim.opt.rtp:append("~/personal/streamer-tools")

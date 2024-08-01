@@ -75,23 +75,6 @@ return require("packer").startup(function(use)
 
 	--  additions for PowerShell / DAP UI
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
-	use("m00qek/baleia.nvim")
-
-	use({
-		"Willem-J-an/nvim-dap-powershell",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"rcarriga/nvim-dap-ui",
-			{
-				"m00qek/baleia.nvim",
-				lazy = true,
-				tag = "v1.4.0",
-			},
-		},
-		config = function()
-			require("dap-powershell").setup()
-		end,
-	})
 
 	use({
 		"TheLeoP/powershell.nvim",
