@@ -48,4 +48,6 @@ end)
 
 -- PowerShell integration
 vim.keymap.set("n", "<leader>PS", function() require("powershell").toggle_term() end)
-vim.keymap.set("n", "<leader>PE", function() require("powershell").eval() end)
+vim.keymap.set({"n", "v"}, "<leader>PE", function() require("powershell").eval() end)
+vim.keymap.set("n", "<leader>db", function() require('dap').continue() end)
+vim.keymap.set("n", "<leader>bp", function() require('dap').toggle_breakpoint() end)
