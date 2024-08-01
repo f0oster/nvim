@@ -8,6 +8,7 @@ lsp.ensure_installed({
   'powershell_es',
   'clangd'
 })
+lsp.skip_server_setup({'powershell_es'})
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
@@ -51,20 +52,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
-
--- PowerShell LSP config
-lsp.configure('powershell_es', {
-  bundle_path = bundle_path,
-  on_attach = on_attach,
-  settings = {
-    powershell = {
-      codeFormatting = {
-        Preset = 'OTBS'
-      }
-    }
-  }
-})
-
 
 lsp.setup()
 
