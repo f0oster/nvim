@@ -47,6 +47,10 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- PowerShell integration
+vim.keymap.set({"n", "v"}, "<leader>run", function()
+    vim.cmd('normal! ggVG') 
+    require("powershell").eval()
+end)
 vim.keymap.set("n", "<leader>PS", function() require("powershell").toggle_term() end)
 vim.keymap.set({"n", "v"}, "<leader>PE", function() require("powershell").eval() end)
 vim.keymap.set("n", "<leader>db", function() require('dap').continue() end)

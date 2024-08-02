@@ -4,6 +4,7 @@ require('powershell').setup({
       codeFormatting = {
          preset = 'OTBS'
       }
-   }
+   },
+   shell="pwsh"
 })
 
